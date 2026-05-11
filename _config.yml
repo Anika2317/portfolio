@@ -13,19 +13,14 @@
 #   Write an awesome description for your new site here. You can edit this line
 #   in _config.yml. It will appear in your document head meta (for Google search
 #   results) and in your feed.xml site description.
-
 title: Open Coding 
 description: "Class of 2026"
 owner_name: Anika Seksaria
-github_username: anika2317 
+github_username: Anika2317 
 github_repo: "Port" 
 baseurl: "/Port" 
-owner_name: John Mortensen
-github_username: jm1021 
-github_repo: "portfolio" 
-baseurl: "/portfolio" 
+url: "https://Anika2317.github.io"
 future: true
-
 # Build settings
 # --------------
 #
