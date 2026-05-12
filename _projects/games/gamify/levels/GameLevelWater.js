@@ -1,9 +1,9 @@
-import GameEnvBackground from './essentials/GameEnvBackground.js';
-import Npc from './essentials/Npc.js';
-import Player from './essentials/Player.js';
-import GameControl from './essentials/GameControl.js';
+import GameEnvBackground from '@assets/js/GameEnginev1.1/essentials/GameEnvBackground.js';
+import Player from '@assets/js/GameEnginev1.1/essentials/Player.js';
+import Npc from '@assets/js/GameEnginev1.1/essentials/Npc.js';
+import GameControl from '@assets/js/GameEnginev1.1/essentials/GameControl.js';
+import Shark from '@assets/js/GameEnginev1.1/Shark.js';
 import GameLevelStarWars from './GameLevelStarWars.js';
-import Shark from './Shark.js';
 
 class GameLevelWater {
   constructor(gameEnv) {
@@ -17,7 +17,7 @@ class GameLevelWater {
     let path = gameEnv.path;
 
     // Background data
-    const image_src_water = path + "/images/gamify/water/deepseadungeon.jpeg";
+    const image_src_water = path + "/images/projects/gamify/water/deepseadungeon.jpeg";
     const image_data_water = {
         id: 'Water',
         src: image_src_water,
@@ -25,7 +25,7 @@ class GameLevelWater {
     };
 
     // Player Data for Octopus
-    const sprite_src_octopus = path + "/images/gamify/water/octopus.png"; // be sure to include the path
+    const sprite_src_octopus = path + "/images/projects/gamify/water/octopus.png"; // be sure to include the path
     const OCTOPUS_SCALE_FACTOR = 5;
     const sprite_data_octopus = {
         id: 'Octopus',
@@ -52,7 +52,7 @@ class GameLevelWater {
     };
 
     // NPC Data for Byte Nomad (Smaller Version)
-    const sprite_src_nomad = path + "/images/gamify/water/animwizard.png"; // be sure to include the path
+    const sprite_src_nomad = path + "/images/projects/gamify/water/animwizard.png"; // be sure to include the path
     const sprite_data_nomad = {
         id: 'JavaWorld',
         greeting: "Hi I am Java Portal.  Leave this world and go on a Java adventure!",
@@ -88,7 +88,7 @@ class GameLevelWater {
       };
 
      // Shark Data
-    const sprite_src_shark = path + "/images/gamify/water/shark.png"; // be sure to include the path
+    const sprite_src_shark = path + "/images/projects/gamify/water/shark.png"; // be sure to include the path
     const sprite_data_shark = {
         id: 'Shark',
         greeting: "Enemy Shark",
@@ -98,17 +98,17 @@ class GameLevelWater {
         pixels: {height: 225, width: 225},
         INIT_POSITION: { x: 100, y: 100},
         orientation: {rows: 1, columns: 1 },
-        down: {row: 0, start: 0, columns: 1 },
-        right: {row: 0, start: 0, columns: 1},
-        left: {row: 0, start: 0, columns: 1, mirror: true }, // mirror is used to flip the sprite
+        down: {row: 0, start: 0, columns: 1, wiggle: 0.005 },
+        right: {row: 0, start: 0, columns: 1, wiggle: 0.005 },
+        left: {row: 0, start: 0, columns: 1, wiggle: 0.005, mirror: true }, // mirror is used to flip the sprite
         hitbox: { widthPercentage: 0.25, heightPercentage: 0.55
          },
           //walking area creates the box where the Shark can walk in 
         walkingArea: {
-            xMin: (width * 1/5), //left boundary
-            xMax: (width * 4/5), //right boundary 
-            yMin: height / 4, //top boundary 
-            yMax: (height * 3 / 5) //bottom boundary
+            xMin: 0, //left boundary
+            xMax: width, //right boundary 
+            yMin: (height * .25), //top boundary 
+            yMax: (height * .55) //bottom boundary
          },
         speed: 0.5,
         direction: { x: 1, y: 1 },
@@ -116,7 +116,7 @@ class GameLevelWater {
       };
 
     // Nezuko NPC sprite data
-    const sprite_src_nezuko = path + "/images/gamify/water/nezuko.png"; // be sure to include the path
+    const sprite_src_nezuko = path + "/images/projects/gamify/water/nezuko.png"; // be sure to include the path
     const sprite_greet_nezuko = "I've never seen you before. Are you lost? Well, even if you are.. I don't think I'm going to help you get out of here.";
     const platformerLink = "https://pages.opencodingsociety.com/navigation/game.html"; // Replace this with your actual platformer game link
 
@@ -137,7 +137,7 @@ class GameLevelWater {
       }
     };
 
-const sprite_src_puffer = path + "/images/gamify/water/puffer.png";
+const sprite_src_puffer = path + "/images/projects/gamify/water/puffer.png";
     const sprite_data_puffer = {
       id: 'Pufferfish',
       greeting: "Enemy Pufferfish",
@@ -151,7 +151,7 @@ const sprite_src_puffer = path + "/images/gamify/water/puffer.png";
       hitbox: { widthPercentage: 0.25, heightPercentage: 0.55 }
     };
 
-    const sprite_src_gold = path + "/images/gamify/water/gold.png";
+    const sprite_src_gold = path + "/images/projects/gamify/water/gold.png";
     const sprite_data_gold = {
       id: 'Goldfish',
       greeting: "Enemy Goldfish",
@@ -162,7 +162,18 @@ const sprite_src_puffer = path + "/images/gamify/water/puffer.png";
       INIT_POSITION: { x: width / 2, y: height / 2 },
       orientation: { rows: 1, columns: 2 },
       down: { row: 0, start: 0, columns: 2 },
+      right: {row: 0, start: 0, columns: 2, wiggle: 0.005 },
+      left: {row: 0, start: 0, columns: 2, wiggle: 0.005, mirror: true }, // mirror is used to flip the sprite
+      walkingArea: {
+          xMin: 0, //left boundary
+          xMax: width, //right boundary 
+          yMin: (height * .65), //top boundary 
+          yMax: (height * .65) //bottom boundary
+       },
+      speed: 0.3,
+      direction: { x: 1, y: 1 },
       hitbox: { widthPercentage: 0.25, heightPercentage: 0.55 }
+ 
     };
 
     this.classes = [      
