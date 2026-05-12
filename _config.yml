@@ -12,13 +12,13 @@ future: true
 # Build settings
 # --------------
 incremental: true
-remote_theme: jekyll/minima
+remote_theme: Open-Coding-Society/minima
 plugins:
   - jekyll-remote-theme
   - jekyll-include-cache
 
-# Minima-specific settings
-# ------------------------
+# Minima-specific settings (customized for Open Coding Society)
+# -----------------------------------------------------------------
 minima:
   skin: dark
   social_links:
