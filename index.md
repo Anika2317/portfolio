@@ -6,7 +6,7 @@ show_reading_time: false
 ---
 
 <style>
-    /* Aesthetic Blue Color Palette */
+    /* Clean Grid Setup */
     .btn-grid { 
         display: grid; 
         grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); 
@@ -17,45 +17,47 @@ show_reading_time: false
     .rubric-btn {
         display: block;
         padding: 18px;
-        color: #ffffff;
         text-decoration: none;
         border-radius: 8px;
-        font-weight: 600;
+        font-weight: 800; /* Maximum thickness for maximum clarity */
         text-align: center;
-        background-color: #2563eb; /* Uniform Blue Background */
-        border-left: 5px solid #1d4ed8; /* Deeper Blue Left Edge */
         transition: all 0.3s ease;
+        backdrop-filter: blur(4px); /* Subtle background blur to keep it clean */
     }
     
     .rubric-btn:hover {
-        background-color: #1d4ed8;
-        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+        opacity: 0.95;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
         transform: scale(1.02);
     }
 </style>
 
 # Anika Seksaria | CS111 Portfolio
 
-### 🎓 Required Rubric Evidence
-> Click to explore the technical evidence required for CS111 college credit.
-
-<div class="btn-grid">
-    <a href="{{site.baseurl}}/oop" class="rubric-btn">Object-Oriented Programming</a>
-    <a href="{{site.baseurl}}/control" class="rubric-btn">Control Structures</a>
-    <a href="{{site.baseurl}}/data" class="rubric-btn">Data Types</a>
-    <a href="{{site.baseurl}}/operators" class="rubric-btn">Operators</a>
-    <a href="{{site.baseurl}}/io" class="rubric-btn">Input/Output</a>
-    <a href="{{site.baseurl}}/docs" class="rubric-btn">Documentation</a>
-    <a href="{{site.baseurl}}/debug" class="rubric-btn">Debugging</a>
-    <a href="{{site.baseurl}}/testing" class="rubric-btn">Testing & Verification</a>
-</div>
-
-<br>
-
 ### 🏰 Course Projects
 > Current development progress for CS111.
 
 <div class="btn-grid">
-    <a href="{{site.baseurl}}/games/red-riding/overview" class="rubric-btn">🐺 Red Riding Hood</a>
-    <a href="{{site.baseurl}}/cs111/2026/03/18/index.html" class="rubric-btn">📝 Homework Lessons</a>
+    <!-- Semi-transparent dark sage with solid white text -->
+    <a href="{{site.baseurl}}/games/red-riding/overview" class="rubric-btn" style="background-color: rgba(45, 76, 58, 0.25); border: 2px solid #2d4c3a; color: #ffffff;">🐺 Red Riding Hood</a>
+    <a href="{{site.baseurl}}/cs111/2026/03/18/index.html" class="rubric-btn" style="background-color: rgba(61, 96, 73, 0.25); border: 2px solid #3d6049; color: #ffffff;">📝 Homework Lessons</a>
+</div>
+
+<br>
+
+### 🎓 Required Rubric Evidence
+> Click to explore the technical evidence required for CS111 college credit.
+
+<div class="btn-grid">
+    <!-- High transparency sage backdrops paired with sharp text colors for absolute readability -->
+    <a href="{{site.baseurl}}/oop" class="rubric-btn" style="background-color: rgba(30, 51, 42, 0.2); border: 2px solid #1e332a; color: #ffffff;">Object-Oriented Programming</a>
+    <a href="{{site.baseurl}}/control" class="rubric-btn" style="background-color: rgba(41, 66, 55, 0.2); border: 2px solid #294237; color: #ffffff;">Control Structures</a>
+    <a href="{{site.baseurl}}/data" class="rubric-btn" style="background-color: rgba(52, 82, 68, 0.2); border: 2px solid #345244; color: #ffffff;">Data Types</a>
+    <a href="{{site.baseurl}}/operators" class="rubric-btn" style="background-color: rgba(64, 99, 82, 0.2); border: 2px solid #406352; color: #ffffff;">Operators</a>
+    <a href="{{site.baseurl}}/io" class="rubric-btn" style="background-color: rgba(77, 117, 97, 0.2); border: 2px solid #4d7561; color: #ffffff;">Input/Output</a>
+    
+    <!-- Using ultra-clear dark text on the light tinted components -->
+    <a href="{{site.baseurl}}/docs" class="rubric-btn" style="background-color: rgba(163, 201, 177, 0.25); border: 2px solid #a3c9b1; color: #111827;">Documentation</a>
+    <a href="{{site.baseurl}}/debug" class="rubric-btn" style="background-color: rgba(188, 224, 202, 0.25); border: 2px solid #bce0ca; color: #111827;">Debugging</a>
+    <a href="{{site.baseurl}}/testing" class="rubric-btn" style="background-color: rgba(213, 242, 223, 0.25); border: 2px solid #d5f2df; color: #111827;">Testing & Verification</a>
 </div>
