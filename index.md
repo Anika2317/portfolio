@@ -6,7 +6,7 @@ show_reading_time: false
 ---
 
 <style>
-    /* Aesthetic Color Palette: Navy, Slate, and Teal Accents */
+    /* Aesthetic Blue Color Palette */
     .btn-grid { 
         display: grid; 
         grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); 
@@ -17,19 +17,19 @@ show_reading_time: false
     .rubric-btn {
         display: block;
         padding: 18px;
-        color: #f1f5f9;
+        color: #ffffff;
         text-decoration: none;
         border-radius: 8px;
         font-weight: 600;
         text-align: center;
-        background-color: #334155; 
-        border-left: 5px solid #22d3ee; /* Aesthetic Teal Accent */
+        background-color: #2563eb; /* Uniform Blue Background */
+        border-left: 5px solid #1d4ed8; /* Deeper Blue Left Edge */
         transition: all 0.3s ease;
     }
     
     .rubric-btn:hover {
-        background-color: #475569;
-        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        background-color: #1d4ed8;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
         transform: scale(1.02);
     }
 </style>
@@ -56,5 +56,6 @@ show_reading_time: false
 > Current development progress for CS111.
 
 <div class="btn-grid">
-    <a href="{{site.baseurl}}/games/red-riding/overview" class="rubric-btn" style="border-left: 5px solid #3f7b3a;">Red Riding Hood: Complete</a>
+    <a href="{{site.baseurl}}/games/red-riding/overview" class="rubric-btn">🐺 Red Riding Hood</a>
+    <a href="{{site.baseurl}}/cs111/2026/03/18/index.html" class="rubric-btn">📝 Homework Lessons</a>
 </div>
