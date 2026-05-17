@@ -39,8 +39,8 @@ show_reading_time: false
 
 <div class="btn-grid">
     <!-- Semi-transparent dark sage with solid white text -->
-    <a href="{{site.baseurl}}/games/red-riding/overview" class="rubric-btn" style="background-color: rgba(45, 76, 58, 0.25); border: 2px solid #2d4c3a; color: #ffffff;">🐺 Red Riding Hood</a>
-    <a href="{{site.baseurl}}/cs111/2026/03/18/index.html" class="rubric-btn" style="background-color: rgba(61, 96, 73, 0.25); border: 2px solid #3d6049; color: #ffffff;">📝 Homework Lessons</a>
+    <a href="{{ '/games/red-riding/overview' | relative_url }}" class="rubric-btn" style="background-color: rgba(45, 76, 58, 0.25); border: 2px solid #2d4c3a; color: #ffffff;">🐺 Red Riding Hood</a>
+    <a href="{{ '/cs111/2026/03/18/index.html' | relative_url }}" class="rubric-btn" style="background-color: rgba(61, 96, 73, 0.25); border: 2px solid #3d6049; color: #ffffff;">📝 Homework Lessons</a>
 </div>
 
 <br>
