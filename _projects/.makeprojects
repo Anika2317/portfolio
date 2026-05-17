@@ -13,7 +13,8 @@
 games/cs-pathway:dev
 games/gamify:dev
 games/red-riding:dev
-HomeworkTri1:dev
+projects/HomeworkTri1:dev
+projects/rubric:dev
 
 # Systems
 #systems/student-management-groups

@@ -252,11 +252,11 @@ build: build-current
 # Multi-course file splitting
 split-courses:
 	@echo " ------ Splitting multi-course files... -------"
-	@python3 scripts/split_multi_course_files.py
+	@$(PYTHON) scripts/split_multi_course_files.py
 
 clean-courses:
 	@echo "🧹Cleaning course-specific files..."
-	@python3 scripts/split_multi_course_files.py clean
+	@$(PYTHON) scripts/split_multi_course_files.py clean
 
 # Notebook and DOCX conversion
 convert: $(MARKDOWN_FILES) convert-docx
@@ -393,7 +393,7 @@ watch-rebuild:
 dev: stop clean
 	@echo "DEV Projects: $(ACTIVE_DEV_PROJECTS)"
 	@$(MAKE) build-dev-projects ORIGINAL_GOALS="$(ORIGINAL_GOALS)"
-	@$(MAKE) convert-registered-notebooks ORIGINAL_GOALS="$(ORIGINAL_GOALS)"
+	@$(MAKE) convert ORIGINAL_GOALS="$(ORIGINAL_GOALS)"
 	@$(MAKE) jekyll-serve ORIGINAL_GOALS="$(ORIGINAL_GOALS)"
 	@echo "Initializing watch markers..."
 	@touch /tmp/.notebook_watch_marker /tmp/.project_watch_marker

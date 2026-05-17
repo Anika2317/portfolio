@@ -5,7 +5,7 @@ description: "Class of 2026"
 owner_name: Anika Seksaria
 github_username: Anika2317 
 github_repo: "portfolio" 
-baseurl: "" 
+baseurl: "/portfolio" 
 future: true
 
 # Build settings

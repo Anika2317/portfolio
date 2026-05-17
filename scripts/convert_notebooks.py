@@ -6,6 +6,7 @@ import nbformat
 import yaml
 import sys
 import subprocess
+import datetime
 from hashlib import sha256
 import concurrent.futures, traceback, re
 from dataclasses import dataclass, asdict
@@ -641,6 +642,13 @@ def get_relative_output_path(notebook_file):
     relative_path = os.path.relpath(notebook_file, notebook_directory)
 
     markdown_filename = relative_path.replace(".ipynb", "_IPYNB_2_.md")
+    parts = markdown_filename.split(os.sep)
+    filename = parts[-1]
+
+    if not re.match(r'^\d{4}-\d{2}-\d{2}-', filename):
+        date_prefix = datetime.date.today().strftime("%Y-%m-%d")
+        parts[-1] = f"{date_prefix}-{filename}"
+        markdown_filename = os.path.join(*parts)
 
     return os.path.join(destination_directory, markdown_filename)
 
@@ -1064,11 +1072,8 @@ def convert_notebook_to_markdown_with_front_matter(notebook_file):
         # Inject code-runner includes (and submit buttons if challenge_submit is enabled)
         markdown = inject_code_runners(markdown, notebook, front_matter)
         
-        front_matter_content = (
-            "---\n"
-            + "\n".join(f"{key}: {value}" for key, value in front_matter.items())
-            + "\n---\n\n"
-        )
+        front_matter_yaml = yaml.safe_dump(front_matter, sort_keys=False, default_flow_style=False).strip()
+        front_matter_content = "---\n" + front_matter_yaml + "\n---\n\n"
         markdown_with_front_matter = front_matter_content + markdown
         destination_path = get_relative_output_path(notebook_file)
         ensure_directory_exists(destination_path)
