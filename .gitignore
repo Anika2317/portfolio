@@ -58,6 +58,11 @@ assets/js/projects/
 assets/css/projects/
 images/projects/
 
+# Allow manually authored rubric project posts to be committed
+!_posts/projects/
+!_posts/projects/rubric/
+!_posts/projects/rubric/*
+
 # Auto-generated project Makefiles (copied from _template at build time)
 _projects/*/Makefile
 _projects/*/*/Makefile
