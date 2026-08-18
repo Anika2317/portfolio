@@ -32,7 +32,7 @@ show_reading_time: false
     }
 </style>
 
-# Anika Seksaria | CS111 Portfolio
+# Anika | CS111 Portfolio
 
 ### 🏰 Course Projects
 > Current development progress for CS111.
