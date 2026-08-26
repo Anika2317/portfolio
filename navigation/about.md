@@ -10,7 +10,7 @@ comments: true
 Here are a few places I call home or have traveled to!
 
 <comment>
-# As a Conversation Starter
+ As a Conversation Starter
 </comment>
 
 <style>
