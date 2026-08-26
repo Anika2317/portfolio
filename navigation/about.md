@@ -106,7 +106,7 @@ Here are a few places I call home or have traveled to!
 ### Journey through Life
 
 Here is a look at what I do and where I study:
-
+- **Elementary School:** Del Sur Elementary School
 -  **Middle School:** Oak Valley Middle School 
 -  **High School:** Del Norte High School 
 -  **Activities:**  Martial Arts training and guitar performing
