@@ -67,7 +67,7 @@ Here are a few places I call home or have traveled to!
         {"flag": "f/f3/Flag_of_Switzerland.svg", "greeting": "Zurich", "description": "Switzerland"},
         {"flag": "b/ba/Flag_of_Germany.svg", "greeting": "Berlin", "description": "Germany"},
         {"flag": "c/c3/Flag_of_France.svg", "greeting": "Paris", "description": "France"},
-        {"flag": "d/da/Flag_of_Luxembourg.svg", "greeting": "Luxemborg City", "description": "Luxembourg"},
+        {"flag": "d/da/Flag_of_Luxembourg.svg", "greeting": "Luxembourg City", "description": "Luxembourg"},
         {"flag": "2/20/Flag_of_the_Netherlands.svg", "greeting": "Amsterdam", "description": "Netherlands"},
         {"flag": "4/41/Flag_of_India.svg", "greeting": "Hyderabad", "description": "India"}
     ];
