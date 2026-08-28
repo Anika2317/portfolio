@@ -112,7 +112,9 @@ Here is a look at what I do and where I study:
 -  **Activities:**  Martial Arts training and guitar performing
 ### Hobbies & Interests
 
-
+- Playing guitar.
+- Listening to music.
+- Reading novels and literature.
 
 <comment>
 Gallery of Pics, scroll to the right for more ...
