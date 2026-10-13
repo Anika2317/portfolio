@@ -15,13 +15,19 @@ Author: Anika2317 | Exam: AP CSP 2018 Practice MCQ | Total time: 2:10:14
 ---
 
 ## Overall Score
-<img width="3002" height="456" alt="Image" src="https://github.com/user-attachments/assets/f77bddec-5860-448f-bdb3-d6b4c6442af0" /> 
+
+![College Board score report]({{ site.baseurl }}/images/csp/mcq-2018-score.png)
 
 | Score | Percent | Correct | Missed |
 |:---:|:---:|:---:|:---:|
 | 55 / 66 | 83% | 55 | 11 |
 
-<img src="https://mermaid.ink/img/JSV7aW5pdDogeyd0aGVtZSc6J25ldXRyYWwnfX0lJQpwaWUgc2hvd0RhdGEKICAgIHRpdGxlIE92ZXJhbGwgU2NvcmU6IDU1LzY2CiAgICAiQ29ycmVjdCIgOiA1NQogICAgIkluY29ycmVjdCIgOiAxMQ" alt="Score pie chart" width="260">
+```mermaid
+pie showData
+    title Overall Score: 55/66
+    "Correct" : 55
+    "Incorrect" : 11
+```
 
 ---
 
@@ -57,7 +63,13 @@ Author: Anika2317 | Exam: AP CSP 2018 Practice MCQ | Total time: 2:10:14
 | AAP: Algorithms and Programming | 34 | 79% |
 | CSN: Computing Systems and Networks | 4 | 75% |
 
-<img src="https://mermaid.ink/img/JSV7aW5pdDogeyd0aGVtZSc6J25ldXRyYWwnfX0lJQp4eWNoYXJ0LWJldGEKICAgIHRpdGxlICJQZXJmb3JtYW5jZSBieSBCaWcgSWRlYSAoJSkiCiAgICB4LWF4aXMgW0lPQywgREFULCBDUkQsIEFBUCwgQ1NOXQogICAgeS1heGlzICJQZXJjZW50IGNvcnJlY3QiIDAgLS0-IDEwMAogICAgYmFyIFsxMDAsIDgxLCA4MCwgNzksIDc1XQ" alt="Big Idea bar chart" width="360">
+```mermaid
+xychart-beta
+    title "Performance by Big Idea (%)"
+    x-axis [IOC, DAT, CRD, AAP, CSN]
+    y-axis "Percent correct" 0 --> 100
+    bar [100, 81, 80, 79, 75]
+```
 
 AAP is over half the exam (34 of 66), so improving there matters most.
 
@@ -88,7 +100,13 @@ My lowest practice (P4) and lowest skill (4.B, determine the result of code segm
 
 Missed questions averaged 2:11, compared to 1:33 on correct ones.
 
-<img src="https://mermaid.ink/img/JSV7aW5pdDogeyd0aGVtZSc6J25ldXRyYWwnfX0lJQpmbG93Y2hhcnQgTFIKICAgIEFbMTEgTWlzc2VkXSAtLT4gQltSdXNoZWQ6IDUgYW5zd2VyZWQgaW4gdW5kZXIgMTozMF0KICAgIEEgLS0-IENbU3R1Y2s6IDQgdG9vayBvdmVyIDM6MDBdCiAgICBCIC0tPiBEW0ZpeDogY2hlY2sgZXZlcnkgYW5zd2VyIGNob2ljZV0KICAgIEMgLS0-IEVbRml4OiB0cmFjZSBvbiBwYXBlciB3aXRoIGEgdmFyaWFibGUgdGFibGVd" alt="Missed question patterns" width="420">
+```mermaid
+flowchart LR
+    A[11 Missed] --> B[Rushed: 5 answered in under 1:30]
+    A --> C[Stuck: 4 took over 3:00]
+    B --> D[Fix: check every answer choice]
+    C --> E[Fix: trace on paper with a variable table]
+```
 
 ---
 
@@ -164,7 +182,12 @@ second ← temp
 
 ## Next Steps
 
-<img src="https://mermaid.ink/img/JSV7aW5pdDogeyd0aGVtZSc6J25ldXRyYWwnfX0lJQpmbG93Y2hhcnQgVEQKICAgIEFbV2VlayAxOiBCaW5hcnldIC0tPiBCW1dlZWsgMjogVHJhY2luZ10KICAgIEIgLS0-IENbV2VlayAzOiBSYW5kb20gVmFsdWVzIGFuZCBTZWFyY2hdCiAgICBDIC0tPiBEW0V2ZXJ5IHRlc3Q6IGNoZWNrIGVkZ2UgY2FzZXMgYW5kIGtleSB3b3Jkc10" alt="Study plan" width="240">
+```mermaid
+flowchart TD
+    A[Week 1: Binary] --> B[Week 2: Tracing]
+    B --> C[Week 3: Random Values and Search]
+    C --> D[Every test: check edge cases and key words]
+```
 
 - [ ] Memorize 2^1 through 2^8 and practice overflow problems.
 - [ ] Trace every code-result question on paper with a variable table.

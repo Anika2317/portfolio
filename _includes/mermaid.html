@@ -31,6 +31,15 @@
             wrapper.textContent = content;
             block.parentElement.parentNode.replaceChild(wrapper, block.parentElement);
         });
+
+        // Kramdown/Rouge puts the language class on an outer div instead of <code>
+        document.querySelectorAll('div.language-mermaid.highlighter-rouge').forEach((block, index) => {
+            const wrapper = document.createElement('div');
+            wrapper.className = 'mermaid';
+            wrapper.id = 'mermaid-rouge-' + index;
+            wrapper.textContent = block.querySelector('code').textContent;
+            block.parentNode.replaceChild(wrapper, block);
+        });
         
         mermaid.run();
     });
