@@ -8,8 +8,6 @@ permalink: /csp/mcq-2018-reflection
 author: Anika
 ---
 
-# 2018 Practice Exam MCQ Reflection
-
 Author: Anika2317 | Exam: AP CSP 2018 Practice MCQ | Total time: 2:10:14
 
 ---
@@ -35,9 +33,9 @@ pie showData
 
 - Going in: Prepared from recent Python work and logic practice.
 - Went smoothly: Logic gates, flowcharts, compression, and ethics/impact questions.
-- Got hard: Questions that needed step-by-step calculating or tracing.
-- Pattern: Some misses were rushed, and others I got stuck on for over 3 minutes.
-- Takeaway: My concepts are solid. My weak spot is tracing.
+- Found hard: Questions that needed step-by-step calculating or tracing.
+- Pattern: Some misses were miscalculations, and others I got stuck on for over 3 minutes.
+- Takeaway: My concepts are somewhat stronger. My weak spot is tracing.
 
 ---
 
@@ -55,23 +53,23 @@ pie showData
 
 ### The 5 Big Ideas
 
-| Big Idea | Questions | Performance |
-|:---|:---:|:---:|
-| IOC: Impact of Computing | 11 | 100% |
-| DAT: Data | 16 | 81% |
-| CRD: Creative Development | 5 | 80% |
-| AAP: Algorithms and Programming | 34 | 79% |
-| CSN: Computing Systems and Networks | 4 | 75% |
+| Big Idea | Exam Weight | Questions | Performance |
+|:---|:---:|:---:|:---:|
+| Big Idea 1: Creative Development | 10–13% | 5 | 80% |
+| Big Idea 2: Data | 17–22% | 16 | 81% |
+| Big Idea 3: Algorithms and Programming | 30–35% | 34 | 79% |
+| Big Idea 4: Computing Systems and Networks | 11–15% | 4 | 75% |
+| Big Idea 5: Impact of Computing | 21–26% | 11 | 100% |
 
 ```mermaid
 xychart-beta
     title "Performance by Big Idea (%)"
-    x-axis [IOC, DAT, CRD, AAP, CSN]
+    x-axis ["1: Creative Dev", "2: Data", "3: Algorithms", "4: Systems", "5: Impact"]
     y-axis "Percent correct" 0 --> 100
-    bar [100, 81, 80, 79, 75]
+    bar [80, 81, 79, 75, 100]
 ```
 
-AAP is over half the exam (34 of 66), so improving there matters most.
+Big Idea 3: Algorithms and Programming is over half the exam (34 of 66), so improving there matters most.
 
 ### Computational Thinking Practices
 
