@@ -100,10 +100,10 @@ Missed questions averaged 2:11, compared to 1:33 on correct ones.
 
 ```mermaid
 flowchart LR
-    A[11 Missed] --> B[Rushed: 5 answered in under 1:30]
-    A --> C[Stuck: 4 took over 3:00]
-    B --> D[Fix: check every answer choice]
-    C --> E[Fix: trace on paper with a variable table]
+    A[11 Missed] --> B[Quick: 5 answered < 1:30]
+    A --> C[Stuck: 4 > 3:00]
+    B --> D[Fix: check answer choices]
+    C --> E[Fix: retry concepts]
 ```
 
 ---
@@ -199,11 +199,11 @@ flowchart TD
 
 | What I'm Enjoying | What I Want to Improve |
 |:---|:---|
-| Independence to work on passion projects | Tracing code by hand |
+| Independence to work on passion projects | Technical code |
 | Collaborating with the group we created | Binary and data representation |
 | Building the Poway Recovery Center website | Lists and search algorithms |
 | Learning new skills through the lessons | Pacing on longer problems |
 
 Overall, this class has been a really positive experience so far. I've especially enjoyed the independence to work on projects I care about, the collaboration within our group, and building the Poway Recovery Center website for a real organization. I'm learning new skills through the lessons and projects, and this reflection showed me exactly what to focus on next.
 
-Goal: Get Algorithms and Programming and Practice 4 above 85% by tracing on paper and checking edge cases.
+Goal: Get Algorithms and Programming and Practice 4 above 85% by doing more practice tests and practicing technical concepts.
