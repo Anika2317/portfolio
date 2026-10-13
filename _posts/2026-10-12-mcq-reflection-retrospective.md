@@ -15,6 +15,7 @@ Author: Anika2317 | Exam: AP CSP 2018 Practice MCQ | Total time: 2:10:14
 ---
 
 ## Overall Score
+<img width="3002" height="456" alt="Image" src="https://github.com/user-attachments/assets/f77bddec-5860-448f-bdb3-d6b4c6442af0" /> 
 
 | Score | Percent | Correct | Missed |
 |:---:|:---:|:---:|:---:|
