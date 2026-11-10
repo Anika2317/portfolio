@@ -8,6 +8,12 @@ permalink: /csp/deployment-notes
 author: Anika
 ---
 
+<style>
+.post-content table { width: 100%; display: table; table-layout: auto; }
+.post-content th, .post-content td { text-align: left !important; vertical-align: top; overflow-wrap: anywhere; }
+.post-content pre, .post-content pre code { white-space: pre-wrap; overflow-wrap: anywhere; }
+</style>
+
 ## Terms (what they mean)
 
 | Term | Meaning |
@@ -39,8 +45,11 @@ author: Anika
 
 ## Big picture
 ```
-Frontend:  name.opencodingsociety.com     → Route 53 (CNAME) → GitHub Pages
-Backend:   name-api.opencodingsociety.com → Route 53 (A) → server → nginx → port → Docker/Flask
+Frontend:  name.opencodingsociety.com
+           → Route 53 (CNAME) → GitHub Pages
+
+Backend:   name-api.opencodingsociety.com
+           → Route 53 (A) → server → nginx → port → Docker/Flask
 ```
 
 ## Important info
