@@ -21,17 +21,24 @@ author: Anika
 | **AWS** | Amazon's cloud. Holds everything below |
 | **IAM** | AWS user accounts / logins (mine: `anika2317`) |
 | **EC2** | The actual servers (computers) in AWS |
+| **Domain** | `opencodingsociety.com`. The main root web address we own for the organization |
+| **Subdomain** | A specific slice of the main domain given to one team (e.g. `prc.opencodingsociety.com` = Poway Recovery Center frontend, `mgb-api.opencodingsociety.com` = Rashi's backend) |
+| **DNS** | AWS Route 53. The dashboard where I log in as `anika2317` and make CNAME and A records to point subdomains to GitHub Pages or the AWS server |
 | **Route 53** | Phone book. Makes web addresses (`name.opencodingsociety.com`) |
 | **Hosted zone** | Folder of addresses for one domain (use `opencodingsociety.com`) |
 | **Record** | One address in the phone book |
 | **CNAME** | Address → another name (frontend → `org.github.io`) |
 | **A record** | Address → IP number (backend → server) |
+| **Public IP** | `3.129.109.200`. The exact public address of our AWS EC2 server. Anyone on the internet can reach it |
+| **Private IP / Port** | Inside the server, Docker puts each team's backend in its own private box (e.g. port 8450 for PRC, 8451 for MGB). The internet can't reach 8450 directly; nginx answers the public door and passes traffic privately to that port |
 | **Cockpit** | Website to open the server's terminal |
 | **Terminal** | Where you type commands on the server |
 | **Docker** | Runs each team's backend in its own box (container) |
 | **Port** | The backend's door number on the server (e.g. 8450). Each team needs its own |
 | **nginx** | Receptionist. Sends `name-api.opencodingsociety.com` → the right port |
 | **Certbot** | Adds HTTPS (the lock icon) |
+| **HTTP vs HTTPS** | HTTP = normal, unencrypted. HTTPS = encrypted and secure. GitHub Pages forces frontends (like `poway-recovery-center.github.io`) to use HTTPS, so backends must use HTTPS too or the browser blocks the connection |
+| **Certificate** | The digital ID made when you run `sudo certbot --nginx` in the Cockpit terminal. It's what gives `prc-api.opencodingsociety.com` its HTTPS lock icon |
 | **Frontend** | The website (GitHub Pages) |
 | **Backend** | The Flask API (runs on the server) |
 
