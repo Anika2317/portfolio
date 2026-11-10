@@ -9,6 +9,7 @@ author: Anika
 ---
 
 ## Terms (what they mean)
+
 | Term | Meaning |
 |---|---|
 | **AWS** | Amazon's cloud. Holds everything below |
@@ -29,6 +30,7 @@ author: Anika
 | **Backend** | The Flask API (runs on the server) |
 
 ## Two different logins
+
 | | AWS console | Cockpit |
 |---|---|---|
 | Link | nighthawkcodingsociety.signin.aws.amazon.com/console | cockpit.stu.opencodingsociety.com |
@@ -48,7 +50,7 @@ Backend:   name-api.opencodingsociety.com → Route 53 (A) → server → nginx 
 - **Avoid 8500** for sockets (taken)
 - **Image names `flask_open` / `socket_open` are taken** → rename to `flask_teamname` etc.
 
-## My job: Route 53 records
+## Task: Route 53 records
 1. AWS console → search **Route 53** → **Hosted zones** → click **opencodingsociety.com**
 2. Click **Create record**
 3. **Frontend record**
@@ -67,6 +69,7 @@ Backend:   name-api.opencodingsociety.com → Route 53 (A) → server → nginx 
 **Rules:** only ever **Create**. Never edit or delete other teams' records. Leave name blank = WRONG (that's the main site).
 
 ## Looking around the server (safe, read-only)
+
 | Command | What it does |
 |---|---|
 | `ls` | List folders (each = a team's backend) |
@@ -134,18 +137,8 @@ sudo certbot --nginx           # pick ONLY their number
 3. In Route 53: **only Create**, never edit/delete others
 
 ## Done so far
+
 | Team | Frontend | Backend | Port | Server | Frontend setup |
 |---|---|---|---|---|---|
 | PRC | ✅ prc | ✅ prc-api | 8450 | ✅ | ✅ |
 | MGB (Rashi) | ✅ mgb → apcspt1.github.io | ✅ mgb-api → 3.129.109.200 | 8451 (socket 8452) | ⏳ | ⏳ |
-
-## Ask Mr. Mortensen
-- Do I deploy every team on Cockpit, or just make Route 53 records?
-- Do teams get the Cockpit password?
-- CS2027-Backend (new EC2 server): do I make it? (**don't touch until he says**)
-
-## Story (capstone)
-- OCS → give back to the community using technical skills
-- Need capstone page + demo
-- Next Gen OCS (2nd-year student in the pathway)
-- Talk about deployment
