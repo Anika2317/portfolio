@@ -32,42 +32,23 @@ By the end of this lesson you should be able to:
 
 ---
 
-## Part 1: The big idea (an analogy)
-
-Think of the internet like a city.
-
-| Real world | Internet |
-|---|---|
-| A business name ("Poway Recovery Center") | **Domain / subdomain** (`prc.opencodingsociety.com`) |
-| The phone book that turns names into addresses | **DNS** (AWS Route 53) |
-| The street address of a building | **Public IP** (`3.129.109.200`) |
-| Apartment numbers inside the building | **Ports** (`8450`, `8451`, ...) |
-| The receptionist in the lobby | **nginx** |
-| Each apartment's tenant | Each team's **Docker container** running Flask |
-| A sealed, tamper-proof envelope | **HTTPS** |
-| The ID badge that proves who you are | **Certificate** |
-
-All the teams' backends live in **one building** (one AWS EC2 server). The receptionist (nginx) reads the name on each visitor's request and sends them to the right apartment (port).
-
----
-
-## Part 2: Vocabulary
+## Part 1: Vocabulary
 
 | Term | What it means for us |
 |---|---|
 | **AWS** | Amazon's cloud. Holds everything below |
 | **EC2** | The actual server (a computer in AWS) that runs all the backends |
 | **Domain** | `opencodingsociety.com`. The main root web address we own for the organization |
-| **Subdomain** | A specific slice of the main domain given to one team (e.g. `prc.opencodingsociety.com` = Poway Recovery Center frontend, `mgb-api.opencodingsociety.com` = MGB's backend) |
-| **DNS** | Domain Name System. The internet's phone book. For us it's **AWS Route 53**, where CNAME and A records point subdomains to GitHub Pages or the AWS server |
+| **Subdomain** | A name under the main domain that belongs to one team (e.g. `prc.opencodingsociety.com` = Poway Recovery Center frontend, `mgb-api.opencodingsociety.com` = MGB's backend) |
+| **DNS** | Domain Name System. Turns a name into an IP address. For us it's **AWS Route 53**, where CNAME and A records point subdomains to GitHub Pages or the AWS server |
 | **Hosted zone** | The folder of records for one domain (`opencodingsociety.com`) |
-| **Record** | One entry in the phone book |
+| **Record** | One entry in the hosted zone |
 | **CNAME record** | Name → another name. Used for **frontends** (`prc` → `poway-recovery-center.github.io`) |
 | **A record** | Name → IP address. Used for **backends** (`prc-api` → `3.129.109.200`) |
 | **Public IP** | `3.129.109.200`. The exact public address of our EC2 server. Anyone on the internet can reach it |
-| **Private IP / Port** | Inside the server, Docker puts each team's backend in its own private box (e.g. port 8450 for PRC, 8451 for MGB). The internet can't reach 8450 directly; nginx answers the public door and passes traffic privately to that port |
-| **Docker** | Packages your backend and everything it needs into a box (container) so it runs the same on any computer |
-| **nginx** | The receptionist. Listens on the public doors (80 and 443) and forwards `name-api.opencodingsociety.com` → the right port |
+| **Private IP / Port** | Inside the server, each team's backend runs on its own port (e.g. 8450 for PRC, 8451 for MGB). The internet can't reach 8450 directly; nginx receives the request on port 443 and forwards it to that port |
+| **Docker** | Packages your backend and everything it needs into a container so it runs the same on any computer |
+| **nginx** | Web server. Listens on ports 80 and 443 and forwards `name-api.opencodingsociety.com` → the right port |
 | **HTTP vs HTTPS** | HTTP = normal, unencrypted. HTTPS = encrypted and secure. GitHub Pages forces frontends to use HTTPS, so backends **must** use HTTPS too or the browser blocks the connection |
 | **Certificate** | The digital ID made when you run `sudo certbot --nginx`. It's what gives `prc-api.opencodingsociety.com` its lock icon |
 | **Certbot** | The tool that creates the certificate and updates nginx for HTTPS |
@@ -77,9 +58,9 @@ All the teams' backends live in **one building** (one AWS EC2 server). The recep
 
 ---
 
-## Part 3: The journey of a request
+## Part 2: How a request works
 
-Here is everything that happens when someone uses your site.
+Here is what happens when someone uses your site.
 
 ```
 FRONTEND
@@ -90,7 +71,7 @@ FRONTEND
 BACKEND (when the page calls the API)
   JavaScript fetches  https://prc-api.opencodingsociety.com/api/...
     → Route 53 (A record)  says "that's 3.129.109.200"
-    → EC2 server, public door 443 (HTTPS)
+    → EC2 server, port 443 (HTTPS)
     → nginx reads the name "prc-api..." and looks up its config
     → proxy_pass to localhost:8450   (private, inside the server)
     → Docker container → Flask → response goes all the way back
@@ -108,7 +89,7 @@ Key point: **frontend and backend are two separate deployments** with two separa
 
 ---
 
-## Part 4: DNS records (done by the admin)
+## Part 3: DNS records (done by the admin)
 
 Only the admin can make Route 53 records, but you should understand what gets made for your team. Two records per team:
 
@@ -133,7 +114,7 @@ New records can take a few minutes to show up (that's what TTL controls).
 
 ---
 
-## Part 5: Ports, and why every team needs its own
+## Part 4: Ports, and why every team needs its own
 
 One server, many teams. If two backends try to use the same port, the second one fails with **"port is already allocated"**. So every team picks its own.
 
@@ -149,7 +130,7 @@ One server, many teams. If two backends try to use the same port, the second one
 
 ---
 
-## Part 6: Prepare your backend repo (on your laptop)
+## Part 5: Prepare your backend repo (on your laptop)
 
 Change the starter port to your new port in two files.
 
@@ -179,7 +160,7 @@ Then open `http://localhost:NEWPORT`. If it doesn't work on your laptop, it won'
 
 ---
 
-## Part 7: Run your backend on the server
+## Part 6: Run your backend on the server
 
 Log into Cockpit (`cockpit.stu.opencodingsociety.com`) and open the terminal.
 
@@ -213,7 +194,7 @@ docker-compose up -d --build
 
 ---
 
-## Part 8: nginx, the receptionist
+## Part 7: nginx
 
 Create a config file that tells nginx: "when someone asks for `teamname-api.opencodingsociety.com`, send them to `localhost:NEWPORT`."
 
@@ -250,7 +231,7 @@ Now `http://teamname-api.opencodingsociety.com` should work, but only over plain
 
 ---
 
-## Part 9: HTTPS and the certificate
+## Part 8: HTTPS and the certificate
 
 Your frontend is on GitHub Pages, which is **always HTTPS**. Browsers refuse to let an HTTPS page call an HTTP backend (a "mixed content" error). So the backend needs a certificate.
 
@@ -267,7 +248,7 @@ Visit `https://teamname-api.opencodingsociety.com` and look for the lock icon. �
 
 ---
 
-## Part 10: Connect the frontend
+## Part 9: Connect the frontend
 
 1. GitHub repo → **Settings → Pages**
    - Source: **GitHub Actions**
@@ -286,7 +267,7 @@ Push, wait for the Action to finish, and visit `https://teamname.opencodingsocie
 
 ---
 
-## Part 11: Worked example (PRC)
+## Part 10: Worked example (PRC)
 
 | Step | PRC value |
 |---|---|
@@ -301,7 +282,7 @@ Push, wait for the Action to finish, and visit `https://teamname.opencodingsocie
 
 ---
 
-## Part 12: Troubleshooting
+## Part 11: Troubleshooting
 
 | Symptom | Likely cause | Fix |
 |---|---|---|
@@ -318,7 +299,7 @@ Push, wait for the Action to finish, and visit `https://teamname.opencodingsocie
 
 ---
 
-## Part 13: Golden rules
+## Part 12: Rules
 
 1. Every team gets its **own port**. Check `docker ps` before choosing.
 2. **Always `sudo nginx -t` before reloading nginx.**
@@ -333,7 +314,7 @@ Push, wait for the Action to finish, and visit `https://teamname.opencodingsocie
 
 <details>
 <summary>1. What's the difference between a domain and a subdomain?</summary>
-<p>The domain is the root address we own (<code>opencodingsociety.com</code>). A subdomain adds a prefix to give one team its own slice (<code>prc.opencodingsociety.com</code>).</p>
+<p>The domain is the root address we own (<code>opencodingsociety.com</code>). A subdomain adds a prefix to give one team its own address (<code>prc.opencodingsociety.com</code>).</p>
 </details>
 
 <details>
