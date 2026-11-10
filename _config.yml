@@ -99,3 +99,20 @@ minima:
     - navigation/blog.md
     - navigation/search.md
     - navigation/about.md
+
+# Keep build tooling out of the published site (Jekyll 3 replaces its defaults
+# when this list is set, so the defaults are repeated here).
+exclude:
+  - venv
+  - .bundle
+  - .sass-cache
+  - .jekyll-cache
+  - .jekyll-metadata
+  - gemfiles
+  - Gemfile
+  - Gemfile.lock
+  - Gemfile_Patch.rb
+  - node_modules
+  - vendor
+  - Makefile
+  - requirements.txt
